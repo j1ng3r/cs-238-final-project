@@ -1,0 +1,25 @@
+Steps:
+Step 1) Get a market going trading some commodity.
+	Many buyers and sellers (10 buyers, 15 sellers)
+	Everyone has infinite money, but they have a subjective price.
+	There are two classes, buyers and sellers
+	Substep) Add the subjective price variation
+Step 2) Add a single "speculator"
+	Attempts to determine what the true price is
+	Attempts to determine the parameters of the market (mu, nu)
+	From there, determines the approximate maximum and minimum prices (just math, but probabilistically)
+	From there, buys when price is low and sells when price is high
+
+Tasks:
+1) Create buyer and seller classes
+2) Create a market object
+3) Create a general subjective_price update function
+4) Allow the market to accept and match orders (M has some code)
+5) Write the send_bid function where each agent sends in their sell/buy bid
+6) Instantiate many buyers and sellers and test
+
+7) Create speculator class
+8) Figure out the quantities of interest (for computational DM) and how to model them
+9) Implement in code
+10) Write the send_bid function. Does not have to send in an order; can choose to hold.
+11) Instantiate, test again, see how well the speculator can exploit the irrationality of the other agents.
