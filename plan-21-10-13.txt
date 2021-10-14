@@ -1,0 +1,16 @@
+Steps:
+	Add a single "speculator"
+	Attempts to determine what the true price is
+	Attempts to determine the parameters of the market (mu, nu)
+	From there, determines the approximate maximum and minimum prices (just math, but probabilistically)
+	From there, buys when price is low and sells when price is high
+
+Tasks:
+0) Play around with parameter
+1) Add subjective price variation (maybe)
+
+1) Create speculator class
+2) Figure out the quantities of interest (for computational DM) and how to model them
+3) Implement in code
+4) Write the send_bid function. Does not have to send in an order; can choose to hold.
+5) Instantiate, test again, see how well the speculator can exploit the irrationality of the other agents.
