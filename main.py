@@ -46,7 +46,7 @@ class Seller:
 
 class Market:
 	def __init__(self):
-		self.asking_price=0
+		self.asking_price = 0
 		self.decay_time = 20
 		self.decayed_asking_price = 0
 		self.decayed_volume_commodity = 0

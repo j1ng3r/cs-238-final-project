@@ -14,3 +14,6 @@ Tasks:
 3) Implement in code
 4) Write the send_bid function. Does not have to send in an order; can choose to hold.
 5) Instantiate, test again, see how well the speculator can exploit the irrationality of the other agents.
+6) Constant inflow agent
+	Think of like a mutual fund that puts in $1000 every week.
+	Or a person who automatically invests 5% of their income once a month.

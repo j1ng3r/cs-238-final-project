@@ -1,0 +1,77 @@
+Parameters:
+	true_price = 100
+		Not really a param because scalable system
+	
+	Buyer subjective price stdev = 0.2
+	Buyer asking price stdev = 0.4
+	Buyer aggressiveness = 0.01
+	
+	Seller subjective price stdev = 0.2
+	Seller asking price stdev = 0.4
+	Seller aggressiveness = 0.01
+	
+	Market decay time = 20
+		This is more of a thing that changes how its plotted
+		In the future it will be used by the speculators.
+	Market initial volume_commodity and volume_fiat
+		This kind of changes the behavior at the beginning
+	
+	Number of timesteps
+	Number of buyers
+	Number of sellers
+	
+	How asking price is updated based on completed transaction or not
+		For buyers, we use sigmoid
+		For sellers, we use shifted exponential
+
+Assumptions and Simplifications:
+	Subjective price never changes
+	Aggressiveness never changes
+	
+	Buyers and sellers have infinite resources
+	Buyers and sellers only send in one order per timestep
+	There is no risk for buyers or sellers, only potential added value
+	Buyers never sell and sellers never buy
+	No shorting, calling, or more complex order and option types
+	
+	Added value is not tracked
+	
+	The update to the asking price does not factor in:
+		The current or past market price
+		Past acceptance/rejection of orders
+	
+	In reality, market exchanges extract a small fee from all transactions
+		proportional to the size of the transaction
+	
+	Also, there is only one commodity to be traded, with nothing outside social knowledge to price it
+	
+	Buyers and sellers also have no expenses or reasons for possessing either fiat or the commodity
+	
+	If we allow for big orders, will need to play a matching game with orders
+
+Priority list of assumptions/simplifications to complexify:
+Rank 1:
+	Added value is not tracked
+	Subjective price never changes
+	Aggressiveness never changes
+	The update to the asking price does not factor in:
+		The current or past market price
+		Past acceptance/rejection of orders
+	There is no risk for buyers or sellers, only potential added value
+		Kinda vague
+		Includes finite resources, holding resources, uncertain income and expense
+		
+	
+Rank 2:
+	Buyers never sell and sellers never buy
+	No shorting, calling, or more complex order and option types
+	In reality, market exchanges extract a small fee from all transactions
+		proportional to the size of the transaction
+	
+Rank 3:
+	Also, there is only one commodity to be traded, with nothing outside social knowledge to price it
+	Buyers and sellers only send in one order per timestep
+	If we allow for big orders, will need to play a matching game with orders
+	How asking price is updated based on completed transaction or not
+		For buyers, we use sigmoid
+		For sellers, we use shifted exponential
