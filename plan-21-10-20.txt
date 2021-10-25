@@ -21,9 +21,37 @@ Tasks:
 
 Ideas for speculator:
 Uses price from 50 timesteps ago based on now to figure out whether or not to buy or sell
-Once an order is sent in, it will attempt to clear for 10 timesteps
 The agent optimizes for the expected price 50 timesteps from now
 Also accounts for its current stock of commodity.
+-Tracks profit / losses but has infinite money to purchases with
+-Can only buy 1 / sell 1 / do nothing at each timestep (buys or sells at current market; trade is guaranteed)
+State space: (Current price, price 50 timesteps ago)
+
+Action space: (buy 1, sell 1, hold)
+Goal: trying to construct a probability of the next price and the final price
+
+-Buying happens if expected next price is smaller than the expected final price
+-Selling happens if expected next price is larger than the expected final price
+-Holding would in theory happen if finite resource or exchange fee or short fee 
+Key points from above "algorithm":
+
+
+Simplest method to fall back on / have written first if world ends:
+-Take the difference between current price and price 50 ago:
+-Buying happens if difference is positive (trend is up i.e. will level out at high value)
+-Selling happens if difference is negative (trend is down i.e. will level out at low value)
+-Holding happens if differnce is 0
+
+Replacement of above simple speculator:
+-use moving average from last 50 timesteps in same fashion
+
+Want to calculate the following distributions:
+P(p'|p,p0) [gaussian?]
+P(f|p',p,p0) [???]
+
+For TA/OH : 
+what form should they take? How do we learn their params? are we missing anything crucial?
+
 
 Agents are judged at the end based on the final sell price.
 TODO: pick a nice prior
