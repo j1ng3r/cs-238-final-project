@@ -1,0 +1,7 @@
+50 trials to train (30 datapoints per trial), 10 trials to test
+	Average profit over 10 trials: 3.5842442196364575
+	Standard deviation of profit: 17.41916443654151
+	Zscore: 0.6506842199943317
+	10000 timesteps per trial, aggresiveness of 0.01
+	Time to train: 6:19.470238
+	Time to test : 1:15.937567
