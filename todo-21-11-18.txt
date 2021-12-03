@@ -4,3 +4,5 @@ Smaller timesteps, more parameters to learn
 Implement simple linear regression
 Try to fix this current version
 Neural network
+
+

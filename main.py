@@ -208,17 +208,27 @@ def test_seed(seed):
 	plt.clf()
 	print(seed)
 
+def plot_seed(seed):
+	simdata = run_simulation(seed = seed)
+	tup = simdata.final_buy_sell_prices
+	plt.plot(simdata.times, simdata.decayed_market_prices)
+	plt.axhline(y=tup[0], color='b', linestyle='-')
+	plt.axhline(y=tup[1], color='cyan', linestyle='-')
+	plt.show()
+	plt.clf()
+
 def main():
-	test_seed(1731)
-	test_seed(1722)
-	test_seed(103)
-	test_seed(44)
-	test_seed(165)
-	test_seed(171)
-	test_seed(2013)
-	test_seed(65538)
-	test_seed(2863311532)
-	test_seed(3735928561)
+	# test_seed(1731)
+	# test_seed(1722)
+	# test_seed(103)
+	# test_seed(44)
+	# test_seed(165)
+	# test_seed(171)
+	# test_seed(2013)
+	# test_seed(65538)
+	# test_seed(2863311532)
+	# test_seed(3735928561)
+	plot_seed(1016)
 
 if __name__ == '__main__':
 	main()

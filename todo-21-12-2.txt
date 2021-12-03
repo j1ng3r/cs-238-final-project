@@ -1,0 +1,6 @@
+Make simdata run on a set seed so that our results are fully reproducible
+
+Force this problem on a neural network regardless of practical fit (cart before horse)
+
+Write paper (video is optimal)
+
